@@ -1,3 +1,10 @@
+<?php
+// Using the $_POST superglobal to access the form data, creating short variable names. This code creates three variables, $tireqty, $oilqty, and $sparkqty, and assigns them the values from the form.
+    $tireqty = $_POST['tireqty'];
+    $oilqty = $_POST['oilqty'];
+    $sparkqty = $_POST['sparkqty'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +21,10 @@
         // Using the date function to print the current date and time
         echo date('g:i A T, F jS, Y.');
         echo "</p>";
+        echo "<p>Your order is as follows: </p>";
+        echo htmlspecialchars($tireqty) . ' tires<br />';
+        echo htmlspecialchars($oilqty) . ' bottles of oil<br />';
+        echo htmlspecialchars($sparkqty) . ' spark plugs<br />';
         ?>
 </body>
 </html>
